@@ -1,10 +1,9 @@
 <?php
 
-namespace DTApi\Repository;
+namespace App\Repository;
 
 use Validator;
 use Illuminate\Database\Eloquent\Model;
-use DTApi\Exceptions\ValidationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class BaseRepository
@@ -31,16 +30,15 @@ class BaseRepository
     /**
      * @return array
      */
-    public function validatorAttributeNames()
-    {
+    public function validatorAttributeNames(): array {
         return [];
     }
 
+
     /**
-     * @return Model
+     * @return Model|null
      */
-    public function getModel()
-    {
+    public function getModel(): ?Model {
         return $this->model;
     }
 
